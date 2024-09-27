@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package serviceA;
+
+service AService {
+  rpc CallBService (Empty) returns (ResponseFromB);
+}
+
+message Empty {}
+
+message ResponseFromB {
+  string message = 1;
+}

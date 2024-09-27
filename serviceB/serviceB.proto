@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package serviceB;
+
+service BService {
+  rpc PerformTask (TaskRequest) returns (TaskResponse);
+}
+
+message TaskRequest {
+  string description = 1;
+}
+
+message TaskResponse {
+  int32 id = 1;
+  string description = 2;
+  bool completed = 3;
+}
