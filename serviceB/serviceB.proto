@@ -4,6 +4,7 @@ package serviceB;
 
 service BService {
   rpc PerformTask (TaskRequest) returns (TaskResponse);
+  rpc ServiceBOnlyFunction1(Empty) returns (BServiceResponse);
 }
 
 message TaskRequest {
@@ -14,4 +15,10 @@ message TaskResponse {
   int32 id = 1;
   string description = 2;
   bool completed = 3;
+}
+
+message Empty {}
+
+message BServiceResponse {
+  string message = 1;
 }
